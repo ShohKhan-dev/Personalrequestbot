@@ -27,13 +27,13 @@ class BotHandler:
         else:
             text = "Name: " +name+ "\nUsername: @" +user_name+ "\nID: " +str(ID)+ "\n\nText: " +user_text
 
-        params = {'chat_id': "846062018", 'text': text, 'parse_mode': 'HTML'}
+        params = {'chat_id': "Your Chat_id", 'text': text, 'parse_mode': 'HTML'}
         method = 'sendMessage'
         resp = requests.post(self.api_url + method, params)
         return resp
         
 
-token = '1297214236:AAHsJDV6aDS46jzCJjAXnt-adiVOhjwotj4' 
+token = '<Bot token>' 
 murojat_bot = BotHandler(token) 
 
 
@@ -72,7 +72,7 @@ def main():
                 if first_chat_text == 'Unknown message':
                     murojat_bot.send_message(first_chat_id, 'Iltimos faqat matnli habar yuboring, boshqa turdagi habarlar qabul qilinmaydi!!!')
                 else:
-                    if first_chat_id != 846062018:
+                    if first_chat_id != <your chat_id>:
                         murojat_bot.send_me(first_chat_name, username, first_chat_id, first_chat_text)
                         murojat_bot.send_message(first_chat_id, 'Sizning habaringiz yuborildi. Iltimos! Javobni kuting')
                     else:
